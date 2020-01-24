@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>python_book</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Python Crash Course</h1>
+
+<h3 id="toc_1">Python - Programming, Computer Science, Algorithms and Data Structures</h3>
+
+<h4 id="toc_2">Part 1, version 1.1</h4>
+
+<p><em>by Mashrur Hossain</em> </p>
+
+<p>© 2019 Matacode Inc. All rights reserved. No portion of this book may be reproduced in any form without permission from the publisher, except as permitted by U.S. copyright law. </p>
+
+<h3 id="toc_3"><a name="toc"></a>Table of contents</h3>
+
+<ol>
+<li><a href="#commandline">Command line basics</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#printing">Print formatting</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#branching">Branching with if/elif/else &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#cds">Compound Data Structures &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#lists">Lists &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#dictionaries">Dictionaries &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#setstuples">Sets and Tuples &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#forloops">For-loops &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#whileloops">While-loops &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#functions">Functions &lt;<em>under construction</em>&gt;</a></li>
+<li><a href="#classes">Classes &lt;<em>under construction</em>&gt;</a>
+<br/>
+<br/>
+<br/></li>
+</ol>
+
+<h2 id="toc_4"><a name="commandline"></a>Command line Basics</h2>
+
+<p>The commands below will allow you to work through the content in this course without any difficulty.</p>
+
+<p>To see which directory you are currently in:  </p>
+
+<p>Windows-&gt; 
+<code>
+cd  
+</code></p>
+
+<p>Mac/Linux-&gt; 
+<code>pwd</code></p>
+
+<p>To list files and folder under current directory:</p>
+
+<p>Windows-&gt; <code>dir</code></p>
+
+<p>Mac/Linux-&gt; <code>ls</code></p>
+
+<p>To move to a directory listed under current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>cd name_of_directory</code></p>
+
+<p>To move up one directory from current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>cd ..</code></p>
+
+<p>To create a new directory under the current directory:</p>
+
+<p>Windows, Mac/Linux-&gt; <code>mkdir name_of_directory</code></p>
+
+<p>To clear the terminal/command prompt screen:</p>
+
+<p>Windows-&gt; <code>cls</code></p>
+
+<p>Mac/Linux-&gt; <code>clear</code></p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_5"><a name="strings"></a>Strings</h2>
+
+<p>Official Python documentation on strings can be found here: <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str</a></p>
+
+<p>Working with text in Python is accomplished by using strings. To create a string you can wrap the text you want to create/use with either single, double or triple quotes. The following are all valid strings.</p>
+
+<div><pre><code class="language-python">&#39;Hello world using single quotes&#39;
+&quot;Hello world using double quotes&quot;
+&quot;&quot;&quot;Hello world using
+triple quotes, also known as
+multi-line strings&quot;&quot;&quot;</code></pre></div>
+
+<p>To type a comment in Python you can use the # sign. Anything written after the # in a python file will be ignored by the Python interpreter. Example below.</p>
+
+<div><pre><code class="language-python"># This is a comment
+</code></pre></div>
+
+<p>To print an object to the screen, you can use the print function.</p>
+
+<div><pre><code class="language-python">print(&#39;Hello world&#39;) # This will print Hello world</code></pre></div>
+
+<p>To run the program that contains the code above, first make sure the file ends with an extension of .py<br/>
+Second, make sure you are in the same directory in your terminal as where the file is saved. So let&rsquo;s say you have saved the code above in a file named lecture_1.py and you are in the same directory in your terminal where this file is saved. You can then enter the following command in your terminal to run the program. (Ignore the $ in the beginning of the line, that signifies the command prompt)</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py </code></pre></div>
+
+<p>Running the command above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Hello world </code></pre></div>
+
+<p>To use an apostrophe &lsquo; in your print statement, you can wrap your string in double quotes.</p>
+
+<div><pre><code class="language-python">print(&quot;I&#39;m using an apostrophe in this statement&quot;)</code></pre></div>
+
+<p>To use quotes within your print statement, you can wrap your string in single quotes like below.</p>
+
+<div><pre><code class="language-python">print(&#39;This is a &quot;quote from a book&quot; which I like&#39;)</code></pre></div>
+
+<p>Variables are used to reference objects in Python, you can think of variables as memory addresses. They should be named using snake case (lower case and words separated by underscore). Example of snake case -&gt; my_name.</p>
+
+<div><pre><code class="language-python">message = &quot;Hello! welcome to the Algorithm&#39;s course&quot;
+name = &quot;Mashrur&quot;</code></pre></div>
+
+<p>You can use variables in your print function to print to the screen</p>
+
+<div><pre><code class="language-python">message = &quot;Hello! welcome to the Algorithm&#39;s course&quot;
+name = &quot;Mashrur&quot;
+print(message)
+print(name)</code></pre></div>
+
+<p>You can print multiple strings using the print function separating them by using commas in-between. A comma will automatically add a whitespace between the strings.</p>
+
+<div><pre><code class="language-python">print(message, name)</code></pre></div>
+
+<p>Running the code above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Hello! welcome to the Algorithm&#39;s course Mashrur </code></pre></div>
+
+<h3 id="toc_6">String concatenation</h3>
+
+<p>You can use string concatenation and add multiple strings together using the + operator</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+name = &quot;Mashrur&quot;
+print(message + name)</code></pre></div>
+
+<p>To add an empty space in between the two strings, which is not automatically added, you can concatenate an empty whitespace string in the middle of the two strings like below.</p>
+
+<div><pre><code class="language-python">print(message + &quot; &quot; + name)</code></pre></div>
+
+<p>Running the code above will result in the following output to your terminal screen:</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py
+Welcome to the course Mashrur</code></pre></div>
+
+<h3 id="toc_7">Indexing</h3>
+
+<p>Strings are sequences of characters which are indexed. We can index into a string by using square brackets. Try out the examples below in your editor.</p>
+
+<div><pre><code class="language-python">movie_name = &quot;Interstellar&quot;
+print(movie_name[0]) # This will print &#39;I&#39; which is at index 0
+print(movie_name[1]) # This will print &#39;n&#39; which is at index 1
+print(movie_name[11]) # This will print &#39;r&#39; 
+print(movie_name[-1]) # This will also print &#39;r&#39;, last item
+print(movie_name[-2]) # This will print &#39;a&#39;, reverse index</code></pre></div>
+
+<p>You can also test this code out directly in the Python console or Python interactive shell which is provided by every python installation. To start the console you can type in python from your command line. Mine looks like below.</p>
+
+<div><pre><code class="language-bash">$ python
+Python 3.6.0 |Anaconda custom (x86_64)| (default, Dec 23 2016, 13:19:00) 
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; </code></pre></div>
+
+<p><em>Note: If you have both python 2 and 3 installed, you may need to specify python3 to start the console using Python 3</em></p>
+
+<p>You can directly type Python code in this console, and you won&rsquo;t need the print function to display the output. Example below.</p>
+
+<div><pre><code class="language-bash">&gt;&gt;&gt; movie_name = &quot;Interstellar&quot;
+&gt;&gt;&gt; movie_name[0]
+&#39;I&#39;
+&gt;&gt;&gt; print(movie_name[0])
+I
+&gt;&gt;&gt; 
+</code></pre></div>
+
+<p>To exit the console at any point you can type exit() like below.</p>
+
+<div><pre><code class="language-bash">&gt;&gt;&gt; exit()
+$ </code></pre></div>
+
+<h3 id="toc_8">Strings are immutable</h3>
+
+<p>You cannot change the value of a specific string once it is created. For example, say you have the string my_name = &ldquo;joan&rdquo;. If you wanted to change the character &#39;a&rsquo; at index 2 to an &lsquo;h&rsquo;, essentially changing &ldquo;joan&rdquo; to &ldquo;john&rdquo;, you cannot use code like.</p>
+
+<div><pre><code class="language-python">my_name = &quot;joan&quot;
+my_name[2] = &quot;h&quot; # This line will result in an error
+print(my_name)</code></pre></div>
+
+<p>If you ran the code above, you would get the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Traceback (most recent call last):
+  File &quot;lecture_1.py&quot;, line 2, in &lt;module&gt;
+    my_name[2] = &quot;h&quot;
+TypeError: &#39;str&#39; object does not support item assignment
+$ </code></pre></div>
+
+<p>The line <em>&ldquo;TypeError: &lsquo;str&rsquo; object does not support item assignment&rdquo;</em> is letting you know that strings are immutable and their value cannot be changed. To make the change above you have to create a new string object and assign it like below (You can use the same variable name, but it will be a different string object).</p>
+
+<div><pre><code class="language-python">my_name = &quot;joan&quot;
+print(my_name)
+my_name = &quot;john&quot; # This will create a new my_name string object
+print(my_name)</code></pre></div>
+
+<p>If you ran the code above, you would get the output you were looking for.</p>
+
+<div><pre><code class="language-bash">$ python testing_practice.py 
+joan
+john</code></pre></div>
+
+<h3 id="toc_9">Slicing</h3>
+
+<p>You can use slicing to select portions of the string or substrings to work with. For example, if we used slicing notation on our movie_name variable defined above, it would look like below.</p>
+
+<div><pre><code class="language-python">print(movie_name[0:5])  # This will print &#39;Inter&#39;
+print(movie_name[:5])   # We can omit the starting index 0, if we
+                        # want to start at the beginning to get
+                        # &#39;Inter&#39; as well
+print(movie_name[5:])   # This will print &#39;stellar&#39;, begin at 
+                        # index 5 and go to the end
+print(movie_name[:])    # This will print &#39;Interstellar&#39;, begin 
+                        # to end
+print(movie_name[5:9])  # This will print &#39;stel&#39;, index 5 to 8,
+                        # excluding the stop index of 9</code></pre></div>
+
+<p>You can specify the step size as an optional third argument like below.</p>
+
+<div><pre><code class="language-python">print(movie_name[5:9:2])    # This will print &#39;se&#39;, moving forward 
+                            # by 2 steps instead of the default 1
+print(movie_name[::2])      # This will print &quot;Itrtla&quot;
+print(movie_name[::-1])     # This will reverse the string and
+                            # print &#39;ralletsretnI&#39;</code></pre></div>
+
+<h3 id="toc_10">Methods and functions</h3>
+
+<p>Python provides built-in methods and functions which we can run on string objects based on our needs. 
+You can find more information on built-in functions by the python standard library here: <a href="https://docs.python.org/3/library">https://docs.python.org/3/library</a></p>
+
+<p>Try out some built-in functions on strings like below, see if you get the output you were expecting.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+print(len(message)) # This gives us the number of characters 
+                    # in the string
+print(type(message)) # This gives us the type of object 
+                    # message is, string in this case
+print(id(message))  # This gives us an integer representation 
+                    # of the message variable in memory</code></pre></div>
+
+<p>Running the code above would result in the following output in the terminal.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+21
+&lt;class &#39;str&#39;&gt;
+4530028168
+$ </code></pre></div>
+
+<p>You can also run built-in methods on string objects provided by python. Methods differ from functions in that methods run on specific objects (a specific string here) on which they are called. They are associated with that object type. We will explore these differences in much more detail as we progress through the course. </p>
+
+<p>For now, think of the methods below as specific to string objects and to use them you can &lsquo;chain&rsquo; them to the string using the dot or &lsquo;.&rsquo; notation. Try out the code below to see what each method does to the string you run it on.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the course&quot;
+print(message.capitalize())
+print(message.upper())
+print(message.lower())</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Welcome to the algorithms course
+WELCOME TO THE ALGORITHMS COURSE
+welcome to the algorithms course
+$ </code></pre></div>
+
+<p>You can use the split() method to separate each word in a string and return a list of words. By default the split will happen on whitespace. You can also specify what to split on like below.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome to the Algorithms course&quot;
+print(&quot;Initial message:&quot;, message)
+print(message.split())
+print(message.split(&quot; &quot;)) # same output as above line
+
+message = &quot;Welcome-to-the-Algorithms-course&quot;
+print(&quot;Updated message:&quot;, message)
+print(message.split(&quot;-&quot;)) # specifying to split on - instead of
+                          # the default whitespace
+</code></pre></div>
+
+<p>Running the code above will result the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_1.py 
+Initial message: Welcome to the Algorithms course
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+Updated message: Welcome-to-the-Algorithms-course
+[&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+$ </code></pre></div>
+
+<p>You can convert the items from the resulting list back to a string by using the join() method. Example below.</p>
+
+<div><pre><code class="language-python">message = &quot;Welcome-to-the-Algorithms-course&quot;
+print(&quot;Initial message:&quot;, message)
+message_list = message.split(&quot;-&quot;)
+print(&quot;Converted to a list:&quot;, message_list)
+new_message = &quot; &quot;.join(message_list)
+print(&quot;Converted back to string:&quot;, new_message)</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-none">$ python lecture_1.py 
+Initial message: Welcome-to-the-Algorithms-course
+Converted to a list: [&#39;Welcome&#39;, &#39;to&#39;, &#39;the&#39;, &#39;Algorithms&#39;, &#39;course&#39;]
+Converted back to string: Welcome to the Algorithms course
+$ 
+</code></pre></div>
+
+<p>You can import more features and functionality available to strings by importing the string module in your code. Documentation can be found here: <a href="https://docs.python.org/3.7/library/string.html">https://docs.python.org/3.7/library/string.html</a></p>
+
+<p>If you want to import the entire string module you can use the following code on top of your python script.</p>
+
+<div><pre><code class="language-python">import string</code></pre></div>
+
+<p>If you want to import a specific feature, let&rsquo;s take the ascii_lowercase constant as an example, then you can do so like below.</p>
+
+<div><pre><code class="language-python">from string import ascii_lowercase</code></pre></div>
+
+<p>You can then use it in your code.</p>
+
+<div><pre><code class="language-python">from string import ascii_lowercase
+print(&quot;Lowercase alphabet:&quot;, ascii_lowercase)</code></pre></div>
+
+<p>Running the code above will result in the following output.</p>
+
+<div><pre><code class="language-bash">$ python lecture_1.py 
+Lowercase alphabet: abcdefghijklmnopqrstuvwxyz</code></pre></div>
+
+<p>This concludes our introductory look at strings. We will continue to learn more about them in upcoming chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_11"><a name="printing"></a>Print formatting</h2>
+
+<p>There are multiple ways you can format how text or objects are displayed by your print statements. We will explore 3 of them in this chapter.</p>
+
+<p>Take the example below where we have a variable stock_price defined to be the 1100 (this 1100 is a number, an integer specifically, we will explore them more in the next chapter). One way to print this would be to use a comma after the first string within the print statement which we have seen already.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(&quot;Price of google stock is:&quot;, stock_price)</code></pre></div>
+
+<p>You can also use the format() method or f&#39;strings. Let&rsquo;s look at format() first.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(&quot;Price of google stock is: {}&quot;.format(stock_price))</code></pre></div>
+
+<p>Python simply takes the object listed within the parenthesis of the format method call and places it within the {} of the string.</p>
+
+<p>You can do the same using f&#39;strings.</p>
+
+<div><pre><code class="language-python">stock_price = 1100
+print(f&quot;Price of google stock is: {stock_price}&quot;)</code></pre></div>
+
+<p>If all 3 methods above were placed one after the other and we ran such a script it would give us the following output in the terminal.</p>
+
+<div><pre><code class="language-bash">$ python lecture_2.py 
+Price of google stock is: 1100
+Price of google stock is: 1100
+Price of google stock is: 1100</code></pre></div>
+
+<p>You can use multiple variables as well.</p>
+
+<div><pre><code class="language-python">today_price = 1100
+yesterday_price = 1000
+print(&quot;Today&#39;s price:&quot;, today_price, &quot;yesterday&#39;s price:&quot;, yesterday_price)
+print(&quot;Today&#39;s price: {}, yesterday&#39;s price: {}&quot;.format(today_price, yesterday_price))
+print(f&quot;Today&#39;s price: {today_price}, yesterday&#39;s price: {yesterday_price}&quot;)</code></pre></div>
+
+<p>Output of the program above would be like below.</p>
+
+<div><pre><code class="language-none">$ python lecture_2.py 
+Today&#39;s price: 1100 yesterday&#39;s price: 1000
+Today&#39;s price: 1100, yesterday&#39;s price: 1000
+Today&#39;s price: 1100, yesterday&#39;s price: 1000
+$ </code></pre></div>
+
+<h3 id="toc_12">Special characters</h3>
+
+<p>You can use special characters within the quotation marks of strings. These characters have special meaning. 3 such characters are listed below.</p>
+
+<p>\ - is an escape character, it escapes the special character
+following it in a string</p>
+
+<p>\n - species a new line within the string</p>
+
+<p>\t - adds a tab in it&rsquo;s place within the string</p>
+
+<p>Take the line of code below as an example.</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow and not only do I know nothing but I also do nothing&quot;)</code></pre></div>
+
+<p>This statement can be broken up into multiple lines with \</p>
+
+<div><pre><code class="language-none">print(&quot;My name is jon snow and \
+not only do I know nothing but \
+I also do nothing&quot;)</code></pre></div>
+
+<p>If you run the code above it will display the line as a single line. Python simply &lsquo;escapes&rsquo; the implied new lines at the end of each line because of the \ character that was used.</p>
+
+<p>\n can be used to print it in multiple lines.</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow\nI know nothing\nI also do nothing&quot;)</code></pre></div>
+
+<p>You can run the code above to get the output below.</p>
+
+<div><pre><code class="language-none">$ python lecture_2.py 
+My name is jon snow
+I know nothing
+I also do nothing</code></pre></div>
+
+<p>\t can be used to introduce tabs within the lines</p>
+
+<div><pre><code class="language-python">print(&quot;My name is jon snow\n \tI know nothing\n\t\tI also do nothing&quot;)</code></pre></div>
+
+<p>This concludes our look at print formatting and special characters. We will learn more about and practice using them in upcoming chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+<h2 id="toc_13"><a name="numbers"></a>Numbers</h2>
+
+<p>Numbers in Python (standard library) are represented using integers, floats and complex numbers. In this course we will cover integers and floats which are most common.
+Documentation on integers and floats can be found here:
+<a href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex</a></p>
+
+<p>Integers are whole numbers, no decimals (example 1, 2, 10, 500). Floats on the other hand include decimals or digits after the decimal.
+To check the type of an object (this will work with other types beyond integers and floats), you can use the type function, example below.</p>
+
+<div><pre><code class="language-python">num_1 = 10
+print(type(num_1)) # This will return class &#39;int&#39;</code></pre></div>
+
+<p>You can perform standard math operations using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> operators</p>
+
+<div><pre><code class="language-python">print(4+4) # output 8
+print(10-5) # output 5
+print(10*2) # output 20
+print(10/2) # output 5.0</code></pre></div>
+
+<p>Division will give you a float (decimal value number) by default.
+To perform floor division, or remove the decimal you can use <code>//</code></p>
+
+<div><pre><code class="language-python">print(10//3) # output 3</code></pre></div>
+
+<p>You can use the mod operator <code>%</code> to find the remainder.</p>
+
+<div><pre><code class="language-python">print(10%3) # output 1
+print(10%2) # output 0</code></pre></div>
+
+<p>To take one number to the power of another number, you can use
+the <code>**</code> operator</p>
+
+<div><pre><code class="language-python">print(5**2) # output 25 (this is 5 squared)
+print(5**3) # output 125 (this is 5 cubed)</code></pre></div>
+
+<p>You can import the math module and use functions provided by it. Documentation on the math module can be found here: <a href="https://docs.python.org/3/library/math.html">https://docs.python.org/3/library/math.html</a></p>
+
+<div><pre><code class="language-python">import math
+print(math.pow(10,5)) # output 100000.0, this is 10 to the power 5</code></pre></div>
+
+<p>Similarly, you can import the random module and generate random
+integers using the randint function. More information on the random module can be found here: <a href="https://docs.python.org/3/library/random.html">https://docs.python.org/3/library/random.html</a></p>
+
+<div><pre><code class="language-python">import random
+print(random.randint(0,1000))   # output random integer between 0
+                                # and 1000</code></pre></div>
+
+<p>You can use other functions on numbers as well. One such function is the abs function which returns the absolute value of a number (removes the negative sign)</p>
+
+<div><pre><code class="language-python">num_2 = -10
+print(abs(num_2))   # output 10</code></pre></div>
+
+<h3 id="toc_14">Type casting</h3>
+
+<p>You can convert one data type to another using type casting. To convert the string &ldquo;10&rdquo; to the integer 10, you can cast it to an int like below.</p>
+
+<div><pre><code class="language-python">my_string = &quot;10&quot;
+my_num = int(my_string) # this will convert &quot;10&quot; to int 10
+print(type(my_num)) # output will be class &#39;int&#39;</code></pre></div>
+
+<p>Similarly you can convert an int to a string, 10 to &ldquo;10&rdquo; by casting it to a string (str)</p>
+
+<div><pre><code class="language-python">my_num = 10
+my_new_string = str(my_num)     # this will convert 10 to &quot;10&quot;
+print(type(my_new_string))      # output will be class &#39;str&#39;</code></pre></div>
+
+<p>You can get input from the user of the program using the input() function. This is displayed in the video lecture on numbers where a multiplication program is used. The input received from the user is always in string format. Therefore, if you want to use that input to perform math operations, you have to cast it to an int or float first. The multiplication program code is shown below.</p>
+
+<div><pre><code class="language-python">print(&quot;Welcome to the multiplication program&quot;)
+print(&quot;-&quot;*30)
+num_1 = int(input(&quot;Enter a number to multiply-&gt; &quot;))
+num_2 = int(input(&quot;Enter a second number to multiply-&gt; &quot;))
+result = num_1 * num_2
+print(result)</code></pre></div>
+
+<p>This concludes our introductory look at working with numbers. We will learn more about them as we continue to work with them in later chapters.</p>
+
+<p><a href="#toc">Back to table of contents</a>
+<br/>
+<br/>
+<br/></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+!function(e){var t={variable:[{pattern:/\$?\(\([\w\W]+?\)\)/,inside:{variable:[{pattern:/(^\$\(\([\w\W]+)\)\)/,lookbehind:!0},/^\$\(\(/],number:/\b-?(?:0x[\dA-Fa-f]+|\d*\.?\d+(?:[Ee]-?\d+)?)\b/,operator:/--?|-=|\+\+?|\+=|!=?|~|\*\*?|\*=|\/=?|%=?|<<=?|>>=?|<=?|>=?|==?|&&?|&=|\^=?|\|\|?|\|=|\?|:/,punctuation:/\(\(?|\)\)?|,|;/}},{pattern:/\$\([^)]+\)|`[^`]+`/,inside:{variable:/^\$\(|^`|\)$|`$/}},/\$(?:[a-z0-9_#\?\*!@]+|\{[^}]+\})/i]};e.languages.bash={shebang:{pattern:/^#!\s*\/bin\/bash|^#!\s*\/bin\/sh/,alias:"important"},comment:{pattern:/(^|[^"{\\])#.*/,lookbehind:!0},string:[{pattern:/((?:^|[^<])<<\s*)(?:"|')?(\w+?)(?:"|')?\s*\r?\n(?:[\s\S])*?\r?\n\2/g,lookbehind:!0,inside:t},{pattern:/(["'])(?:\\\\|\\?[^\\])*?\1/g,inside:t}],variable:t.variable,"function":{pattern:/(^|\s|;|\||&)(?:alias|apropos|apt-get|aptitude|aspell|awk|basename|bash|bc|bg|builtin|bzip2|cal|cat|cd|cfdisk|chgrp|chmod|chown|chroot|chkconfig|cksum|clear|cmp|comm|command|cp|cron|crontab|csplit|cut|date|dc|dd|ddrescue|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|du|egrep|eject|enable|env|ethtool|eval|exec|expand|expect|export|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|getopts|git|grep|groupadd|groupdel|groupmod|groups|gzip|hash|head|help|hg|history|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|jobs|join|kill|killall|less|link|ln|locate|logname|logout|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|make|man|mkdir|mkfifo|mkisofs|mknod|more|most|mount|mtools|mtr|mv|mmv|nano|netstat|nice|nl|nohup|notify-send|nslookup|open|op|passwd|paste|pathchk|ping|pkill|popd|pr|printcap|printenv|printf|ps|pushd|pv|pwd|quota|quotacheck|quotactl|ram|rar|rcp|read|readarray|readonly|reboot|rename|renice|remsync|rev|rm|rmdir|rsync|screen|scp|sdiff|sed|seq|service|sftp|shift|shopt|shutdown|sleep|slocate|sort|source|split|ssh|stat|strace|su|sudo|sum|suspend|sync|tail|tar|tee|test|time|timeout|times|touch|top|traceroute|trap|tr|tsort|tty|type|ulimit|umask|umount|unalias|uname|unexpand|uniq|units|unrar|unshar|uptime|useradd|userdel|usermod|users|uuencode|uudecode|v|vdir|vi|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yes|zip)(?=$|\s|;|\||&)/,lookbehind:!0},keyword:{pattern:/(^|\s|;|\||&)(?:let|:|\.|if|then|else|elif|fi|for|break|continue|while|in|case|function|select|do|done|until|echo|exit|return|set|declare)(?=$|\s|;|\||&)/,lookbehind:!0},"boolean":{pattern:/(^|\s|;|\||&)(?:true|false)(?=$|\s|;|\||&)/,lookbehind:!0},operator:/&&?|\|\|?|==?|!=?|<<<?|>>|<=?|>=?|=~/,punctuation:/\$?\(\(?|\)\)?|\.\.|[{}[\];]/};var a=t.variable[1].inside;a["function"]=e.languages.bash["function"],a.keyword=e.languages.bash.keyword,a.boolean=e.languages.bash.boolean,a.operator=e.languages.bash.operator,a.punctuation=e.languages.bash.punctuation}(Prism);
+</script>
+
+
+</body>
+
+</html>
