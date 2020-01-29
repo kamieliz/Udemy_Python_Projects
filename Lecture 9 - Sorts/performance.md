@@ -29,6 +29,7 @@ O(nlog(n)) is not as good as O(n) but better than O(n<sup>2</sup>)
 	- the base of 2 is the growth rate
 	- the 32 inside the log is the total number of elements you end up with
 	- and 5 is the number of steps and can be expressed as time/complexity
+
 to work with logs in python, import the math module first
 `math.log2(n)` can be used to find the number of steps to break down n items
 
